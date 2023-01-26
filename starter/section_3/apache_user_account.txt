@@ -3,5 +3,25 @@
 
 #Configuration lines:
 
+1- Edit /etc/apache2/envvars
+
+2- update the following
+
+  export APACHE_RUN_USER=www-data  to    apache-user
+  export APACHE_RUN_GROUP=www-data   to    apache-group
+
+
+3- Restart apache service
+
+  sudo service apache2 restart
+
+4- Check that apache is running with new user and group
+
+ps axo user:12,group:15,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm | grep apache-user
+apache-user  apache-group    25521  0.0  0.1 156460  6372 ?        S    05:06:08 00:00:00 apache2
+apache-user  apache-group    25522  0.0  0.1 156460  6372 ?        S    05:06:08 00:00:00 apache2
+apache-user  apache-group    25523  0.0  0.1 156460  6372 ?        S    05:06:08 00:00:00 apache2
+apache-user  apache-group    25524  0.0  0.1 156460  6372 ?        S    05:06:08 00:00:00 apache2
+apache-user  apache-group    25525  0.0  0.1 156460  6372 ?        S    05:06:08 00:00:00 apache2
 
 
