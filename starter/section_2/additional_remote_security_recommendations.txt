@@ -1,0 +1,15 @@
+ 1- use private key for ssh login.
+    e.g. 
+   - ssh -i <private-key> <username@host> -p <port>
+    
+2- Change the default SSH configurations:
+	- Disable root login.
+	- Change default port.
+	- Use "AllowUsers" to restrict users access.
+  
+3- put a rule to block the account after a specific number of failed login attempts.
+
+4- Only allowed specific user or group to ssh.
+e.g.
+  - AllowGroups sshlogin.
+  - AllowUsers sshuser.
